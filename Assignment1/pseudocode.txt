@@ -1,0 +1,98 @@
+Pseudocode:
+Main():
+	open file
+	call generate_list_from_file(file)
+	print menu
+	choice = call get_valid_choice
+	while choice != Q
+        if choice = L
+            call display_list(all_items)
+            display menu
+            call get_valid_choice
+        else if choice = H
+            call hire_item
+            display menu
+            call get_valid_choice
+        else if choice = R
+            call return_item
+            display menu
+            call get_valid_choice
+        else if choice = A
+            call add_item
+            display menu
+            call get_valid_choice
+         else
+            write to file
+            quit
+    close file
+
+get_valid_choice()
+    choice = get choice
+    valid_options = 'LHRAQ'
+    while choice not in valid_options:
+        print invalid
+        get choice
+    return choice
+
+generate_list_from_file(file)
+    all_items = []
+    for line in file:
+        properties_list = line.strip.split(,)
+        append properties_list to all_items
+
+
+hire_item(all_items)
+    avail_items = []
+    for item in all_items
+        if item[-1] = in
+            append item to avail_items
+    call display_list(avail_items)
+    choice = call get_valid_index(len(avail_items-1), error message)
+    print avail_items[choice][0] hired for avail_items[choice][2]
+    avail_items[choice][-1] = out
+
+return_item(all_items)
+    hired_items = []
+    for item in all_items
+        if item[-1] = in
+            append item to hired_items
+    call display_list(avail_items)
+    choice = call get_valid_index(len(hired_items-1), error message)
+    print hired_items[choice][0] returned
+    avail_items[choice][-1] = in
+
+add_item(all_items)
+    item_list = []
+    item_name = get_nonempty_string
+    item_list.append(item_name)
+    item_description = get_nonempty_string
+    item_list.append(item_description)
+    try:
+        item_price = float(input(price))
+        while item_price < 0
+            invalid
+            get again
+    except ValueError
+        invalid message
+    item_list.append(item_price)
+    all_items.append(item_list)
+
+display_item(a_list)
+    for item in a_list
+        item_str = {} - {} ({}) = ${}.format(index(item), item[0], item[1], item[2])
+        if item[-1] = out
+            item_str += *
+        print item_str
+
+get_valid_index(max_index, error_message)
+    try
+        get int(choice)
+        while choice > max_index or choice < 0 or choice % 1 != 0
+            print error_message
+            get choice
+    except ValueError
+        print error_message
+
+
+
+
