@@ -54,4 +54,17 @@ def get_valid_choice():
 
     return choice
 
+
+def get_valid_index(max_index, prompt, error_message):
+    is_valid = False
+    while not is_valid:
+        try:
+            choice = int(input(prompt))
+            if choice > max_index or choice < 0:
+                print(error_message)
+            is_valid = True
+        except ValueError:
+            print(error_message)
+    return choice
+
 main()
