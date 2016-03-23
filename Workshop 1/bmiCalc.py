@@ -1,3 +1,5 @@
+"""Draga Doncila, CP1404, 2016"""
+
 print("Body Mass Index Calculator")
 
 weight = float(input("Please enter your weight in kilograms: "))
