@@ -5,8 +5,8 @@ from random import randint
 num_quickpicks = int(input("How many quick picks? "))
 quickpick_list = []
 for i in range(num_quickpicks):
+    randnum = randint(1, 45)
     while len(quickpick_list) != 6:
-        randnum = randint(1, 45)
         if randnum in quickpick_list:
             randnum = randint(1, 45)
         else:
