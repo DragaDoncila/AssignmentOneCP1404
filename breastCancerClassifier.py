@@ -1,8 +1,8 @@
 TRAINING_FILE = 'breast-cancer-training.txt'
 TESTING_FILE = 'breast_cancer_testing.txt'
 
-def main():
 
+def main():
     print("Reading training data...")
     training_set_list = make_data_set(TRAINING_FILE)
     # print(training_set_list)
@@ -18,7 +18,7 @@ def main():
     test_set_list = make_data_set(TESTING_FILE)
     print("Done reading test data \n")
 
-    print("Classifiying records...")
+    print("Classifying records...")
     result_list = classify_test_set(test_set_list, classifier_list)
     for element in result_list:
         print(element)
@@ -30,25 +30,23 @@ def main():
 
 
 def make_data_set(file_name):
-
     training_file = open(file_name, 'r')
     training_set = []
     for line in training_file:
         # parse through and split at the comma with multiple assignment instead of a list
-        patient_id,a1,a2,a3,a4,a5,a6,a7,a8,a9,diagnosis = line.strip().split(',')
+        patient_id, a1, a2, a3, a4, a5, a6, a7, a8, a9, diagnosis = line.strip().split(',')
         # create a tuple for the patient with the 11 elements, id and diag. first
         if diagnosis == '2':
             new_diag = 'b'
         else:
             new_diag = 'm'
-        patient_info = patient_id, new_diag, int(a1), int(a2), int(a3), int(a4), int(a5),\
-                    int(a6), int(a7), int(a8), int(a9)
+        patient_info = patient_id, new_diag, int(a1), int(a2), int(a3), int(a4), int(a5), int(a6), int(a7), int(
+            a8), int(a9)
         training_set.append(patient_info)
     return training_set
 
 
 def train_classifier(training_set):
-
     benign_count = 0
     benign_sum = [0] * 9
     malignant_count = 0
@@ -80,19 +78,19 @@ def classify_test_set(test_set_list, classifier_list):
     for patient in test_set_list:
         count_benign = 0
         count_malignant = 0
-    #     for each attribute of the patient
+        # for each attribute of the patient
         for index in range(9):
-    #           if attribute is greater than corresponding attribute in classifier_list
-            if patient[index+2] >= classifier_list[index]:
-    #               increase count of malignant attributes
+            # if attribute is greater than corresponding attribute in classifier_list
+            if patient[index + 2] >= classifier_list[index]:
+                # increase count of malignant attributes
                 count_malignant += 1
-    #           otherwise
+                #           otherwise
             else:
-    #               increase count of benign attributes
+                # increase count of benign attributes
                 count_benign += 1
-    #   create result tuple as patient id, benign count, malignant count, diagnosis
+                #   create result tuple as patient id, benign count, malignant count, diagnosis
         patient_result = patient[0], count_benign, count_malignant, patient[1]
-    #   append result tuple to list of result tuples
+        #   append result tuple to list of result tuples
         result_list.append(patient_result)
     # return result tuple list
     return result_list
@@ -108,7 +106,8 @@ def report_results(result_list):
             inaccurate_count += 1
         elif malignant_count > benign_count and actual_diagnosis == 'b':
             inaccurate_count += 1
-    print("Of {} patients, there were {} inaccurate diagnoses based on our classifier".format(total_count, inaccurate_count))
+    print("Of {} patients, there were {} inaccurate diagnoses based on our classifier".format(
+        total_count, inaccurate_count))
     print("Results reported.")
 
 
@@ -122,7 +121,8 @@ def sum_lists(list1, list2):
 def make_averages(sum_list, count):
     averages = []
     for value in sum_list:
-        averages.append(value/count)
+        averages.append(value / count)
     return averages
+
 
 main()
