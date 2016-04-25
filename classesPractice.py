@@ -74,6 +74,7 @@ class TableFan(object):
         self.__current_speed__ = 1
         self.__is_oscillating__ = False
 
+
     def set_speed(self, speed_setting):
         if speed_setting > self.num_speeds or speed_setting < 0:
             print("Invalid speed setting. Attribute not set")
@@ -122,7 +123,62 @@ class TableFan(object):
         return title_str + value_str
 
 
-stu1 = Student("Terry", "Hatchett", 3596)
+"""Album class:
+    attributes: name, artist, year, length, numtracks, tracklisting (as tuple?)
+    methods: __str__, """
+
+
+class Pet:
+
+    def __init__(self, name="", species="", age=0):
+        self.__name = name
+        self.__species = species
+        self.__age = age
+
+    def set_name(self, new_name):
+        self.__name = new_name
+
+    def set_species(self, new_species):
+        self.__species = new_species
+
+    def set_age(self, new_age):
+        self.__age = new_age
+
+    def get_name(self):
+        return self.__name
+
+    def get_species(self):
+        return self.__species
+
+    def get_age(self):
+        return self.__age
+
+
+class Car:
+    def __init__(self, year, make):
+        self.__year_model = year
+        self.__make = make
+        self.__speed = 0
+
+    def accelerate(self):
+        self.__speed += 5
+
+    def brake(self):
+        self.__speed -= 5
+
+    def get_speed(self):
+        return self.__speed
+
+    def __str__(self):
+        return '{} {}'.format(self.__make, self.__year_model)
+
+
+
+
+
+
+
+# stu1 = Student("Terry", "Hatchett", 3596)
 # print(stu1)
 #
 # animal1 = Animal("kitteh", "black", 4)
@@ -143,17 +199,38 @@ stu1 = Student("Terry", "Hatchett", 3596)
 # # horse.num_legs = 10
 # print(horse.return_kooky_string())
 
-new_fan = TableFan("Turbonator", "Panasonic", 200, 5, 400, 5, True)
+# new_fan = TableFan("Turbonator", "Panasonic", 200, 5, 400, 5, True)
 # print(new_fan)
 # new_fan.set_oscillation(1)
 # new_fan.set_speed(6)
 # print(new_fan.display_state())
 # new_fan.set_speed(3)
 # print(new_fan.display_state())
-other_fan = TableFan("Turbo+", "Hitachi", 230, 2, 600, 6, True)
+# other_fan = TableFan("Turbo+", "Hitachi", 230, 2, 600, 6, True)
 # print(other_fan)
 # new_fan.compare_cost(other_fan)
 # new_fan.compare_cost(new_fan)
-other_fan.set_speed(7)
-other_fan.set_oscillation(1)
-print(other_fan.display_state())
+# other_fan.set_speed(7)
+# other_fan.set_oscillation(1)
+# print(other_fan.display_state())
+
+# myPet = Pet()
+# pet_name = input("Pet's Name: ")
+# pet_species = input("Pet's Species: ")
+# pet_age = int(input("Pet's Age: "))
+# myPet.set_name(pet_name)
+# myPet.set_species(pet_species)
+# myPet.set_age(pet_age)
+#
+# print("{} is the loveliest {} year old {} I've ever seen!".format(myPet.get_name(), myPet.get_age() ,
+# myPet.get_species()))
+
+# myCar = Car(2000, "Masseratti")
+# for i in range(5):
+#     myCar.accelerate()
+#     print("{}'s current speed is {}".format(myCar, myCar.get_speed()))
+# print()
+# for j in range(5):
+#     myCar.brake()
+#     print("{}'s current speed is {}".format(myCar, myCar.get_speed()))
+
