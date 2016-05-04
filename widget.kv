@@ -4,6 +4,16 @@
 #        font_size: 42
 #        font_name: 'timesbi'
 
+BoxLayout:
+    orientation: 'horizontal'
+    Button:
+        text: "Press me"
+        on_press: app.button_pressed()
+    Label:
+        id: first_label
+        text: "Pre Pressed"
+
+
 #BoxLayout:
 #    orientation: 'vertical'
 #    Button:
@@ -18,35 +28,35 @@
 #            BubbleButton:
 #                text: "Inside Button"
 
-AnchorLayout:
-    AnchorLayout:
-        anchor_x: 'left'
-        BoxLayout:
-            size_hint: 0.25, 1
-            orientation: 'vertical'
-            Button:
-                text: "List Items"
-            Button:
-                text: "Hire"
-            Button:
-                text: "Return"
-            Button:
-                text: "Confirm"
-            Button:
-                text: "Add New"
-    AnchorLayout:
-        anchor_x: 'right'
-        GridLayout:
-            rows: 3
-            columns: 2
-            size_hint: 0.75, 1
-            Button:
-                text: "List Items"
-            Button:
-                text: "Hire"
-            Button:
-                text: "Return"
-            Button:
-                text: "Confirm"
-            Button:
-                text: "Add New"
+#AnchorLayout:
+#    AnchorLayout:
+#        anchor_x: 'left'
+#        BoxLayout:
+#            size_hint: 0.25, 1
+#            orientation: 'vertical'
+#            Button:
+#                text: "List Items"
+#            Button:
+#                text: "Hire"
+#            Button:
+#                text: "Return"
+#            Button:
+#                text: "Confirm"
+#            Button:
+#                text: "Add New"
+#    AnchorLayout:
+#        anchor_x: 'right'
+#        GridLayout:
+#            rows: 3
+#            columns: 2
+#            size_hint: 0.75, 1
+#            BubbleButton:
+#                text: "List Items"
+#            BubbleButton:
+#                text: "Hire"
+#            BubbleButton:
+#                text: "Return"
+#            BubbleButton:
+#                text: "Confirm"
+#            BubbleButton:
+#                text: "Add New"

@@ -20,12 +20,23 @@
 from kivy.app import App
 from kivy.lang import Builder
 
-class HelloKv(App):
-    def build(self):
-        # give the main window a title
-        self.title = "Hello Draga's World"
-        # load the kv code from the widget file written, and use it to build the main window
-        self.root = Builder.load_file('widget.kv')
-        return self.root
+# class HelloKv(App):
+#     def build(self):
+#         # give the main window a title
+#         self.title = "Hello Draga's World"
+#         # load the kv code from the widget file written, and use it to build the main window
+#         self.root = Builder.load_file('widget.kv')
+#         return self.root
 
-HelloKv().run()
+# HelloKv().run()
+
+class ButtonEventDemo(App):
+    def build(self):
+       self.title = "Button Event Demo"
+       self.root = Builder.load_file('widget.kv')
+       return self.root
+
+    def button_pressed(self):
+        self.root.ids.first_label.text = "Post Press"
+
+ButtonEventDemo().run()
