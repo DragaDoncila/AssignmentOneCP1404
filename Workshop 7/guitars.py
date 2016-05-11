@@ -3,7 +3,8 @@ from guitar import Guitar
 print("My guitars!")
 
 name = input("Name: ")
-guitars = []
+# guitars made list literal
+guitars = list()
 # while name != "":
 #     year = int(input("Year: "))
 #     cost = float(input("Cost: $"))
@@ -21,4 +22,4 @@ for guitar in guitars:
     print("Guitar {}: {:20s}, worth ${:10,.2f} {}".format(
         count, guitar.name + "(" + str(guitar.year) + ")", guitar.cost, '(vintage)' if guitar.is_vintage() else ""
     ))
-
+# line at end added
